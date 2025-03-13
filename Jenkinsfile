@@ -27,10 +27,10 @@ pipeline{
         sh 'echo "Deployment successful!"'
       }
     }
-    post{
+  }
+  post{
       failure{
         echo 'Pipeline Failed'
       }
     }
-  }
 }
