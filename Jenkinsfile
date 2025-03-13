@@ -12,12 +12,12 @@ pipeline{
       steps{
         sh 'mvn test'
         echo 'Test Stage Successful'
-        post {
-          always{
-            junit 'target/surefire-reports/*.xml'
-          }
-        }
         sh './PES1UG22CS571-1'
+      }
+      post {
+        always{
+          junit 'target/surefire-reports/*.xml'
+        }
       }
     }
     stage('Deploy'){
