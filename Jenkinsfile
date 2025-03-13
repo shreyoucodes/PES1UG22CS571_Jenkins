@@ -5,14 +5,12 @@ pipeline{
       steps{
         sh 'mvn clean install'
         echo 'Build Stage Successful'
-        sh 'g++ jenkinstest.cpp -o PES1UG22CS571-1'
       }
     }
     stage('Test'){
       steps{
         sh 'mvn test'
         echo 'Test Stage Successful'
-        sh './PES1UG22CS571-1'
       }
       post {
         always{
